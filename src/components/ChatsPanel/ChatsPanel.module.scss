@@ -1,0 +1,49 @@
+.aside {
+    height: 100%;
+    width: 40%;
+    min-width: 350px;
+    padding: .5rem;
+    border: 2px solid #000;
+}
+
+.chatsList {
+    padding-top: .5rem;
+
+    li {
+        margin-bottom: 10px;
+    }
+}
+
+.modal[open] {
+    display: flex;
+    flex-direction: column;
+
+    input {
+        font-size: 1.35rem;
+        padding: .25rem;
+    }
+
+    input:not(:last-child) {
+        margin-bottom: 10px;
+    }
+}
+
+.modal {
+    &::backdrop {
+        width: 100vw;
+        height: 100vh;
+        background: hsl(0 0 0 / .4);
+    }
+
+    strong {
+        font-size: 1.5rem;
+    }
+
+    form {
+        padding: .5rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 2rem;
+        gap: .5rem;
+    }
+}

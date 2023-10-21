@@ -5,9 +5,11 @@ import ChatsPage from './pages/Chats/ChatsPage';
 import FeedPage from './pages/Feed/FeedPage';
 import AccountPage from './pages/Account/AccountPage';
 import './index.css';
+import LoginPage from './pages/Login/LoginPage';
+import RegisterPage from './pages/Register/RegisterPage';
 
 function App() {
-  const [isAuth, setIsAuth] = useState(true);
+  const [isAuth, setIsAuth] = useState(false);
   const [chatsArray, setChatsArray] = useState([
     {id: 1, name: 'Коллаж', lastMessage: 'последнее сообщение'},
     {id: 2, name: 'user1', lastMessage: 'последнее сообщение'},
@@ -54,6 +56,8 @@ function App() {
             createChat={createChat}/>
         }/>
         <Route path='/account' element={<AccountPage/>}/>
+        <Route path='/log' element={<LoginPage/>}/>
+        <Route path='/reg' element={<RegisterPage/>}/>
       </Routes>
     </div>
   );

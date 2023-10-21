@@ -20,6 +20,13 @@ function App() {
   const [sortedChatsArray, setSortedChatsArray] = useState(null);
   const [currentChatId, setCurrentChatId] = useState(null);
   const [currentChatInfo, setCurrentChatInfo] = useState(null);
+  const [weekHashTags, setWeekHashTags] = useState([
+    {id: 1, body: '#Флористика'}, 
+    {id: 2, body: '#Дизайн'}, 
+    {id: 3, body: '#Психология'}, 
+    {id: 4, body: '#Бокс'}, 
+    {id: 5, body: '#Рисование'}
+  ]);
 
   function deleteChat(deletingChatId) {
     if (deletingChatId === currentChatId) {
@@ -66,7 +73,7 @@ function App() {
       <Header auth={isAuth}/>
       
       <Routes>
-        <Route path='/' element={<FeedPage/>}/>
+        <Route path='/' element={<FeedPage tags={weekHashTags}/>}/>
         <Route path='/chats' element={
           <ChatsPage 
             chatsArray={chatsArray}

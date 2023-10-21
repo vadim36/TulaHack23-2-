@@ -1,0 +1,16 @@
+.tag {
+    user-select: none;
+    cursor: grab;
+    font-size: 1.7rem;
+    background: #000;
+    color: #fff;
+    border-radius: 1rem;
+    padding: .35rem .5rem;
+    margin: .75rem 0;
+}
+
+.title {
+    font-family: 'ZeroCool';
+    font-size: 2.75rem;
+    display: inline;
+}

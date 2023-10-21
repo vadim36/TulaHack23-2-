@@ -22,6 +22,9 @@ export default function Header({auth}) {
                 {auth 
                     ? <Link to="/account" style={{all: "unset"}}>
                             <Button variant="contained">Ваш аккаунт</Button>
+                            <Button variant="contained">
+                                    Выйти
+                            </Button>
                     </Link>
                    : <form name="registerForm">
                         <Button variant="contained">

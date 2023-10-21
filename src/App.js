@@ -8,8 +8,9 @@ import './index.css';
 import LoginPage from './pages/Login/LoginPage';
 import RegisterPage from './pages/Register/RegisterPage';
 
+
 function App() {
-  const [isAuth, setIsAuth] = useState(false);
+  const [isAuth, setIsAuth] = useState(true);
   const [chatsArray, setChatsArray] = useState([
     {id: 1, name: 'Коллаж', lastMessage: 'последнее сообщение'},
     {id: 2, name: 'user1', lastMessage: 'последнее сообщение'},
@@ -51,9 +52,9 @@ function App() {
             chatsArray={chatsArray} 
             deleteChat={deleteChat}
             setCurrentChat={setCurrentChat}
-            currentChatId={currentChatId}
             currentChatInfo={currentChatInfo}
-            createChat={createChat}/>
+            createChat={createChat}
+          />
         }/>
         <Route path='/account' element={<AccountPage/>}/>
         <Route path='/log' element={<LoginPage/>}/>

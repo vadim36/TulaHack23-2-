@@ -1,0 +1,18 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.mainTitle {
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
+}
+
+.buttonSubmit {
+    max-width: 20%;
+}

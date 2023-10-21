@@ -1,5 +1,5 @@
-import { Button } from '@mui/material'
-import React, {useRef} from 'react'
+import { Avatar, Button } from '@mui/material'
+import React from 'react'
 import styles from './ChatLink.module.scss'; 
 
 export default function ChatLink({chatData, deleteChat, setCurrentChat}) {
@@ -8,8 +8,8 @@ export default function ChatLink({chatData, deleteChat, setCurrentChat}) {
             if (event.target.closest('button[data-delete-button]')) return;
             return setCurrentChat(chatData.id, chatData);
         }}>
+            <Avatar>{chatData.name[0]}</Avatar>
             <strong className={styles.title}>{chatData.name}</strong>
-            <p>{chatData.lastMessage}</p>
             <Button
                 data-delete-button
                 variant='contained' 

@@ -6,7 +6,7 @@ export default function ChatLink({chatData, deleteChat, setCurrentChat}) {
     return (
         <li className={styles.chatLink} onClick={(event) => {
             if (event.target.closest('button[data-delete-button]')) return;
-            return setCurrentChat(chatData.id);
+            return setCurrentChat(chatData.id, chatData);
         }}>
             <strong className={styles.title}>{chatData.name}</strong>
             <p>{chatData.lastMessage}</p>

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import Header from './components/Header/Header';
 import { Routes, Route } from 'react-router';
 import ChatsPage from './pages/Chats/ChatsPage';
@@ -14,6 +14,7 @@ function App() {
     {id: 3, name: 'user2', lastMessage: 'последнее сообщение'}
   ]);
   const [currentChatId, setCurrentChatId] = useState(null);
+  const [currentChatInfo, setCurrentChatInfo] = useState(null);
 
   function deleteChat(deletingChatId) {
     if (deletingChatId === currentChatId) {
@@ -22,7 +23,8 @@ function App() {
     return setChatsArray(chatsArray.filter(chat => chat.id !== deletingChatId));
   }
 
-  function setCurrentChat(id) {
+  function setCurrentChat(id, chatInfo) {
+    setCurrentChatInfo(chatInfo);
     return setCurrentChatId(id);
   } 
 
@@ -48,6 +50,7 @@ function App() {
             deleteChat={deleteChat}
             setCurrentChat={setCurrentChat}
             currentChatId={currentChatId}
+            currentChatInfo={currentChatInfo}
             createChat={createChat}/>
         }/>
         <Route path='/account' element={<AccountPage/>}/>

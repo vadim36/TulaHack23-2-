@@ -10,7 +10,9 @@ export default function ChatsPage(props) {
                 deleteChat={props.deleteChat}
                 setCurrentChat={props.setCurrentChat}
                 createChat={props.createChat}/>
-            <CurrentChat chatId={props.currentChatId}/>
+            <CurrentChat 
+                chatId={props.currentChatId} 
+                chatInfo={props.currentChatInfo}/>
         </div>
     )
 }

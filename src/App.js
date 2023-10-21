@@ -25,6 +25,11 @@ function App() {
     if (deletingChatId === currentChatId) {
       setCurrentChatId(previosChatId => previosChatId - 1);
     }
+
+    if (sortedChatsArray) {
+      return setSortedChatsArray(sortedChatsArray.filter(chat => chat.id !== deletingChatId))
+    }
+
     return setChatsArray(chatsArray.filter(chat => chat.id !== deletingChatId));
   }
 
@@ -34,12 +39,22 @@ function App() {
   } 
 
   function createChat(chatName, chatTopic) {
+    if (sortedChatsArray) {
+      return setSortedChatsArray([...sortedChatsArray,
+        {
+          id: sortedChatsArray[sortedChatsArray.length - 1].id + 1,
+          name: chatName,
+          chatTopic
+        }
+      ])
+    }
     return setChatsArray([...chatsArray, 
         {
           id: chatsArray[chatsArray.length - 1].id + 1, 
           name: chatName,
+          chatTopic
         }
-      ]);
+    ]);
   }
 
   function searchChats(searchedValue) {

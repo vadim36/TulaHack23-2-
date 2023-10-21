@@ -1,7 +1,9 @@
 import React,{useState} from 'react'
 import classes from './CurrentChat.module.scss'
 import { Button, TextField } from '@mui/material';
-import ChatMessage from '../ChatMessage/ChatMessage';
+import IconButton from '@mui/material/IconButton';
+import SearchIcon from '@mui/icons-material/Search';
+import MoreIcon from '@mui/icons-material/MoreVert';
 
 export default function CurrentChat({chatInfo, ...props}) {
     const [message, setMessage] = useState('');
@@ -13,7 +15,13 @@ export default function CurrentChat({chatInfo, ...props}) {
                     <section className={classes.chatHeader} 
                         aria-label='section for chat name'
                     >
-                        <h2>{chatInfo.name}</h2>
+                        <h2 className={classes.chatTitle}>{chatInfo.name}</h2>
+                        <IconButton size='large'>
+                            <SearchIcon />
+                        </IconButton>
+                        <IconButton size='large'>
+                            <MoreIcon/>
+                        </IconButton>
                     </section>
                    <article className={classes.sectionMessages} 
                             aria-label='section for messages'
@@ -25,7 +33,7 @@ export default function CurrentChat({chatInfo, ...props}) {
                         className={classes.sendMessageForm}
                     >
                         <TextField 
-                            variant='outlined' 
+                            variant='standard'
                             type="text" 
                             placeholder='Введите сообщение...'
                             size='small'

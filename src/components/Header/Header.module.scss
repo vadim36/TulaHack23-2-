@@ -1,0 +1,18 @@
+.link {
+    font-size: 1.75rem;
+    background: #001524;
+    color: #fff;
+    border-radius: 2rem;
+    padding: 0 .7rem;
+    transition: .25s ease-out;
+
+    &:hover,
+    &:active {
+        background: #E4DBC6;
+        color: #000;
+    }
+}
+
+.mainLogo {
+    font-family: 'ZeroCool';
+}

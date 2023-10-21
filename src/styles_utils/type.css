@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,400;0,500;1,400&display=swap');
 
+@font-face {
+    font-family: 'ZeroCool';
+    src: url('../fonts/ZeroCool.woff') format('woff');
+}
+
 #App {
     font-family: 'Montserrat Alternates';
     font-weight: 500;

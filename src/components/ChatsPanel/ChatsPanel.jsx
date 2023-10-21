@@ -5,7 +5,6 @@ import ChatLink from '../ChatLink/ChatLink'
 
 export default function ChatsPanel(props) {
     const modalAddChat = useRef();
-
     const [nameGroupValue, setNameGroupValue] = useState('');
     const [chatTopic, setChatTopic] = useState('');
 
@@ -20,12 +19,13 @@ export default function ChatsPanel(props) {
             <TextField 
                 label='Поиск...'
                 variant="outlined"
+                style={{margin: '.75rem'}}
                 value={searchedValue}
                 onChange={(event) => setSearchedValue(event.target.value)}/>
             <Button 
                 variant='contained' 
                 onClick={() => modalAddChat.current.showModal()}
-                style={{marginTop: '7px'}}
+                style={{margin: '.5rem .75rem 1rem .5rem'}}
             >
                 Создать новый чат
             </Button>
@@ -54,17 +54,19 @@ export default function ChatsPanel(props) {
                     <input type="text" 
                         placeholder='Введите название группы...'
                         value={nameGroupValue}
-                        onChange={(event) => setNameGroupValue(event.target.value)}/>
+                        onChange={(event) => setNameGroupValue(event.target.value)}
+                        required/>
                     <input type="text" 
                         placeholder='Добавьте хэштэг...'
                         value={chatTopic}
-                        onChange={(event) => setChatTopic(event.target.value)}/>
+                        onChange={(event) => setChatTopic(event.target.value)}
+                        required/>
                     
                     <Button 
                         variant='contained'
                         color="success"
                         onClick={() => {
-                            createChat(nameGroupValue, chatTopic);
+                            props.createChat(nameGroupValue, chatTopic);
                             setNameGroupValue('');
                             setChatTopic('');
                             modalAddChat.current.close();

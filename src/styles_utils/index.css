@@ -1,12 +1,14 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 a {
     all: unset;
     cursor: pointer;
     transition: all .15s ease-out;
     user-select: none;
-}
-
-a:hover {
-    color: #ccc;    
 }
 
 ul {

@@ -2,19 +2,24 @@ import React from 'react'
 import AppBar from '@mui/material/AppBar';
 import { Toolbar, Typography, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
+import styles from './Header.module.scss';
 
 export default function Header({auth}) {
     return (
-        <AppBar position='sticky'>
+        <AppBar sx={{background: '#F0EEE5', color: '#000'}} position='sticky'>
             <Toolbar>
                 <Typography variant="h4" sx={{ flexGrow: 1 }}>
-                    <Link to='/'>Коллаж</Link>
+                    <Link to='/' className={styles.mainLogo}>
+                        Коллаж
+                    </Link>
                 </Typography>
 
                 <nav style={{flexGrow: 1.2}}>
                     <ul>
                         <li>
-                            <Link to="/chats" style={{fontSize: '2rem'}}>Чаты</Link>
+                            <Link to="/chats" className={styles.link}>
+                                    Чаты
+                            </Link>
                         </li>
                     </ul>
                 </nav>

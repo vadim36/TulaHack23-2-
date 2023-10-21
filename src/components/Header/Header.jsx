@@ -1,6 +1,6 @@
 import React from 'react'
 import AppBar from '@mui/material/AppBar';
-import { IconButton, Toolbar, Typography, Button } from '@mui/material';
+import { Toolbar, Typography, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 export default function Header({auth}) {

@@ -9,7 +9,6 @@ import './styles_utils/type.css';
 import LoginPage from './pages/Login/LoginPage';
 import RegisterPage from './pages/Register/RegisterPage';
 
-
 function App() {
   const [isAuth, setIsAuth] = useState(false);
   const [chatsArray, setChatsArray] = useState([

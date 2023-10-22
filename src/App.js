@@ -11,11 +11,11 @@ import RegisterPage from './pages/Register/RegisterPage';
 
 
 function App() {
-  const [isAuth, setIsAuth] = useState(true);
+  const [isAuth, setIsAuth] = useState(false);
   const [chatsArray, setChatsArray] = useState([
     {id: 1, name: 'Коллаж'},
-    {id: 2, name: 'user1'},
-    {id: 3, name: 'user2'}
+    {id: 2, name: 'Константин'},
+    {id: 3, name: 'Ангелина'}
   ]);
   const [sortedChatsArray, setSortedChatsArray] = useState(null);
   const [currentChatId, setCurrentChatId] = useState(null);

@@ -14,3 +14,18 @@
     font-size: 2.75rem;
     display: inline;
 }
+
+.topWeekImage {
+    outline: 3px solid #000;
+    border-bottom: 3px solid #000;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: .35s ease-out;
+
+    &:hover {
+        scale: 1.05;
+    }
+
+    width: 100%;
+    margin: 2rem 0;
+}

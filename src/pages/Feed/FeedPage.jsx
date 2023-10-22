@@ -2,9 +2,10 @@ import React from 'react'
 import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import styles from './FeedPage.module.scss';
+import topWeekImage from './topWeek.jpeg';
+import { Container } from '@mui/material';
 
-import {Card, CardMedia, CardContent, Typography, CardActions, Button} from '@mui/material'
-import axios from 'axios';
+import {Card, CardContent, Typography, CardActions, Button} from '@mui/material';
 
 export default function FeedPage(props) {
 
@@ -18,7 +19,8 @@ export default function FeedPage(props) {
     }
 
     return (
-        <React.Fragment>
+        <Container className={styles.feedWrapper}>
+          <Container sx={{borderLeft: '2px solid #000', borderRight: '2px solid #000'}}>
             <section aria-label='for best topics'>
              <Swiper
                spaceBetween={60}
@@ -29,9 +31,10 @@ export default function FeedPage(props) {
                     <SwiperSlide className={styles.tag} key={tag.id}>{tag.body}</SwiperSlide>)}
              </Swiper>
             </section>
-            <section aria-label='for week best'>
+            <section aria-label='for week best' className={styles.weekTopicSection}>
                     <h2 className={styles.title}>Топ недели:</h2>
                     <strong style={{display: 'inline', fontSize: '2rem', float: 'right'}}>Группы</strong>
+                    <img src={topWeekImage} className={styles.topWeekImage} alt='best week topic'/>
                     <Swiper
                         spaceBetween={20}
                         slidesPerView={1}
@@ -54,6 +57,7 @@ export default function FeedPage(props) {
                             </SwiperSlide>)}
                     </Swiper>
             </section>
-        </React.Fragment>
+          </Container>
+        </Container>
     )
 }
